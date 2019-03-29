@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<ITResource ID="mspl_9f1a88b4fc67421b98de270d5a63d35b"
+    xmlns="http://modeliosoft/xsddesigner/a22bd60b-ee3d-425c-8618-beb6a854051a/ITResource.xsd"
+  xmlns:iotns="http://www.example.org/IoTHoneynetSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://modeliosoft/xsddesigner/a22bd60b-ee3d-425c-8618-beb6a854051a/ITResource.xsd ANASTACIA_MSPL_XML_Schema.xsd">
+    <configuration xsi:type='RuleSetConfiguration'>
+        <capability>
+            <Name>IoT_honeynet</Name>
+        </capability>
+        <configurationRule>
+            <configurationRuleAction xsi:type='VIoTHoneyNetAction' >
+              <VIoTHoneyNetActionType>DEPLOY</VIoTHoneyNetActionType>
+              <ioTHoneyNet>
+                  <iotns:name>REST with RPL router</iotns:name>
+                  <iotns:net id="1">
+                    <iotns:name>net</iotns:name>
+                  </iotns:net>
+                  <iotns:router id="1">
+                    <iotns:name>Wismote RPL Root</iotns:name>
+                    <iotns:interaction_level>LOW</iotns:interaction_level>
+                    <iotns:if id="1" net="str1234">
+                      <iotns:name>str1234</iotns:name>
+                      <iotns:mac_addr>str1234</iotns:mac_addr>
+                      <iotns:ip>str1234</iotns:ip>
+                    </iotns:if>
+                    <iotns:operatingSystem>
+                      <iotns:name>contiki</iotns:name>
+                      <iotns:version>2.7</iotns:version>
+                    </iotns:operatingSystem>
+                    <iotns:software id="1">
+                      <iotns:name>RPL</iotns:name>
+                      <iotns:version>3.14159</iotns:version>
+                    </iotns:software>
+                    <iotns:model>Wismote</iotns:model>
+                    <iotns:location>
+                      <iotns:x>33.260163187353555</iotns:x>
+                      <iotns:y>30.643217359962595</iotns:y>
+                    </iotns:location>
+                    <iotns:resource>TEMPERATURE</iotns:resource>
+                  </iotns:router>
+                  <iotns:ioTHoneyPot id="2">
+                    <iotns:name>Erbium Server</iotns:name>
+                    <iotns:interaction_level>LOW</iotns:interaction_level>
+                    <iotns:if id="1" net="str1234">
+                      <iotns:name>str1234</iotns:name>
+                      <iotns:mac_addr>str1234</iotns:mac_addr>
+                      <iotns:ip>str1234</iotns:ip>
+                    </iotns:if>
+                    <iotns:operatingSystem>
+                      <iotns:name>contiki</iotns:name>
+                      <iotns:version>2.7</iotns:version>
+                    </iotns:operatingSystem>
+                    <iotns:software id="1">
+                      <iotns:name>Erbium Server</iotns:name>
+                      <iotns:version>3.14159</iotns:version>
+                    </iotns:software>
+                    <iotns:model>Wismote</iotns:model>
+                    <iotns:location>
+                      <iotns:x>35.100895239785295</iotns:x>
+                      <iotns:y>39.70574552287428</iotns:y>
+                    </iotns:location>
+                    <iotns:resource>TEMPERATURE</iotns:resource>
+                  </iotns:ioTHoneyPot>
+                  <iotns:ioTHoneyPot id="3">
+                    <iotns:name>Erbium Server</iotns:name>
+                    <iotns:interaction_level>LOW</iotns:interaction_level>
+                    <iotns:if id="1" net="str1234">
+                      <iotns:name>str1234</iotns:name>
+                      <iotns:mac_addr>str1234</iotns:mac_addr>
+                      <iotns:ip>str1234</iotns:ip>
+                    </iotns:if>
+                    <iotns:operatingSystem>
+                      <iotns:name>contiki</iotns:name>
+                      <iotns:version>2.7</iotns:version>
+                    </iotns:operatingSystem>
+                    <iotns:software id="1">
+                      <iotns:name>Erbium Server</iotns:name>
+                      <iotns:version>3.14159</iotns:version>
+                    </iotns:software>
+                    <iotns:model>Wismote</iotns:model>
+                    <iotns:location>
+                      <iotns:x>35.100895239785295</iotns:x>
+                      <iotns:y>39.70574552287428</iotns:y>
+                    </iotns:location>
+                    <iotns:resource>TEMPERATURE</iotns:resource>
+                  </iotns:ioTHoneyPot>
+                  <iotns:ioTHoneyPot id="4">
+                    <iotns:name>Erbium Server</iotns:name>
+                    <iotns:interaction_level>LOW</iotns:interaction_level>
+                    <iotns:if id="1" net="str1234">
+                      <iotns:name>str1234</iotns:name>
+                      <iotns:mac_addr>str1234</iotns:mac_addr>
+                      <iotns:ip>str1234</iotns:ip>
+                    </iotns:if>
+                    <iotns:operatingSystem>
+                      <iotns:name>contiki</iotns:name>
+                      <iotns:version>2.7</iotns:version>
+                    </iotns:operatingSystem>
+                    <iotns:software id="1">
+                      <iotns:name>Erbium Server</iotns:name>
+                      <iotns:version>3.14159</iotns:version>
+                    </iotns:software>
+                    <iotns:model>Wismote</iotns:model>
+                    <iotns:location>
+                      <iotns:x>35.100895239785295</iotns:x>
+                      <iotns:y>39.70574552287428</iotns:y>
+                    </iotns:location>
+                    <iotns:resource>TEMPERATURE</iotns:resource>
+                  </iotns:ioTHoneyPot>
+                </ioTHoneyNet>
+            </configurationRuleAction>
+            <configurationCondition>
+                <isCNF>false</isCNF>
+            </configurationCondition>
+            <externalData xsi:type='Priority'>
+                <value>0</value>
+            </externalData>
+            <Name>Rule0</Name>
+            <isCNF>false</isCNF>
+        </configurationRule>
+        <resolutionStrategy xsi:type='FMR'/>
+        <Name>Conf0</Name>
+    </configuration>
+</ITResource>

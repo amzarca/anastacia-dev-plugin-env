@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<ITResource ID="mspl_9f1a88b4fc67421b98de270d5a63d35d"
+    xmlns="http://modeliosoft/xsddesigner/a22bd60b-ee3d-425c-8618-beb6a854051a/ITResource.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://modeliosoft/xsddesigner/a22bd60b-ee3d-425c-8618-beb6a854051a/ITResource.xsd ANASTACIA_MSPL_XML_Schema.xsd">
+    <configuration xsi:type='RuleSetConfiguration'>
+        <capability>
+            <Name>Traffic_Divert</Name>
+        </capability>
+        <configurationRule>
+            <configurationRuleAction xsi:type='TrafficDivertAction' >
+              <TrafficDivertActionType>FORWARD</TrafficDivertActionType>
+              <packetDivertAction>
+                <isCNF>false</isCNF>
+                <packetFilterCondition>
+                  <DestinationAddress>2001:720:1710:0:5054:ff:fe54:a30a</DestinationAddress>
+                </packetFilterCondition>
+              </packetDivertAction>   
+            </configurationRuleAction>
+            <configurationCondition xsi:type='TrafficDivertConfigurationCondition'>
+              <isCNF>false</isCNF>
+              <packetFilterCondition>
+                <SourceAddress>2001:0720:1710:0004:0000:0000:0000:0002</SourceAddress>
+              </packetFilterCondition>
+            </configurationCondition>
+            <externalData xsi:type='Priority'>
+                <value>60000</value>
+            </externalData>
+            <Name>Rule0</Name>
+            <isCNF>false</isCNF>
+        </configurationRule>
+        <resolutionStrategy xsi:type='FMR'/>
+        <Name>Conf0</Name>
+    </configuration>
+</ITResource>

@@ -1,0 +1,120 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="simconf" type="simconfType"/>
+  <xs:complexType name="projectType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="EXPORT" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="radiomediumType" mixed="true">
+    <xs:sequence>
+      <xs:element type="xs:float" name="transmitting_range"/>
+      <xs:element type="xs:float" name="interference_range"/>
+      <xs:element type="xs:float" name="success_ratio_tx"/>
+      <xs:element type="xs:float" name="success_ratio_rx"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eventsType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="logoutput"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sourceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="EXPORT" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="commandsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="EXPORT" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="firmwareType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="EXPORT" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="motetypeType" mixed="true">
+    <xs:sequence>
+      <xs:element type="xs:string" name="identifier"/>
+      <xs:element type="xs:string" name="description"/>
+      <xs:element type="sourceType" name="source"/>
+      <xs:element type="commandsType" name="commands"/>
+      <xs:element type="firmwareType" name="firmware"/>
+      <xs:element type="xs:string" name="moteinterface" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="interface_configType" mixed="true">
+    <xs:sequence>
+      <xs:element type="xs:float" name="x" minOccurs="0"/>
+      <xs:element type="xs:float" name="y" minOccurs="0"/>
+      <xs:element type="xs:float" name="z" minOccurs="0"/>
+      <xs:element type="xs:float" name="deviation" minOccurs="0"/>
+      <xs:element type="xs:byte" name="id" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="moteType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="breakpoints"/>
+      <xs:element type="interface_configType" name="interface_config" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="motetype_identifier"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="simulationType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="title"/>
+      <xs:element type="xs:int" name="randomseed"/>
+      <xs:element type="xs:int" name="motedelay_us"/>
+      <xs:element type="radiomediumType" name="radiomedium"/>
+      <xs:element type="eventsType" name="events"/>
+      <xs:element type="motetypeType" name="motetype" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="moteType" name="mote" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pluginType" mixed="true">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="mote_arg" minOccurs="0"/>
+      <xs:element type="plugin_configType" name="plugin_config" minOccurs="0"/>
+      <xs:element type="xs:short" name="width"/>
+      <xs:element type="xs:byte" name="z"/>
+      <xs:element type="xs:short" name="height"/>
+      <xs:element type="xs:short" name="location_x"/>
+      <xs:element type="xs:short" name="location_y"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="plugin_configType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="moterelations" minOccurs="0"/>
+      <xs:element type="xs:string" name="skin" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="viewport" minOccurs="0"/>
+      <xs:element type="xs:string" name="filter" minOccurs="0"/>
+      <xs:element type="xs:string" name="formatted_time" minOccurs="0"/>
+      <xs:element type="xs:string" name="coloring" minOccurs="0"/>
+      <xs:element type="xs:byte" name="mote" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="showRadioRXTX" minOccurs="0"/>
+      <xs:element type="xs:string" name="showRadioHW" minOccurs="0"/>
+      <xs:element type="xs:string" name="showLEDs" minOccurs="0"/>
+      <xs:element type="xs:float" name="zoomfactor" minOccurs="0"/>
+      <xs:element type="xs:string" name="notes" minOccurs="0"/>
+      <xs:element type="xs:string" name="decorations" minOccurs="0"/>
+      <xs:element type="xs:int" name="port" minOccurs="0"/>
+      <xs:element type="xs:string" name="bound" minOccurs="0"/>
+      <xs:element type="xs:string" name="script" minOccurs="0"/>
+      <xs:element type="xs:string" name="active" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="simconfType">
+    <xs:sequence>
+      <xs:element type="projectType" name="project" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="simulationType" name="simulation"/>
+      <xs:element type="pluginType" name="plugin" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

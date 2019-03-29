@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<ITResource ID="mspl_9f1a88b4fc67421b98de270d5a63d35a"
+	xmlns="http://modeliosoft/xsddesigner/a22bd60b-ee3d-425c-8618-beb6a854051a/ITResource.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://modeliosoft/xsddesigner/a22bd60b-ee3d-425c-8618-beb6a854051a/ITResource.xsd ANASTACIA_MSPL_XML_Schema.xsd">
+    <configuration xsi:type='RuleSetConfiguration'>
+        <capability>
+            <Name>Filtering_L4</Name>
+        </capability>
+        <configurationRule>
+            <configurationRuleAction xsi:type='FilteringAction' >
+              <FilteringActionType>DENY</FilteringActionType>
+            </configurationRuleAction>
+            <configurationCondition xsi:type='FilteringConfigurationCondition'>
+                <isCNF>false</isCNF>
+                <packetFilterCondition>
+                                        <!--Smart Camera ipv6 address-->
+                    <SourceAddress>2001:720:1710:4::4/128</SourceAddress>
+                    <ProtocolType>ICMP</ProtocolType>
+                </packetFilterCondition>
+            </configurationCondition>
+            <externalData xsi:type='Priority'>
+                <value>60000</value>
+            </externalData>
+            <Name>Rule0</Name>
+            <isCNF>false</isCNF>
+        </configurationRule>
+        <resolutionStrategy xsi:type='FMR'/>
+        <Name>Conf0</Name>
+    </configuration>
+</ITResource>
